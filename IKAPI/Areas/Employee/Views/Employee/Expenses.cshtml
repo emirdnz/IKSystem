@@ -1,0 +1,45 @@
+﻿
+
+<h2>Masraf Yönetimi</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Masraf Türü</th>
+            <th>Tutar</th>
+            <th>Tarih</th>
+            <th>Durum</th>
+        </tr>
+    </thead>
+    @* <tbody>
+        @foreach (var expense in Model)
+        {
+            <tr>
+                <td>@expense.ExpenseType</td>
+                <td>@expense.Amount</td>
+                <td>@expense.Date.ToShortDateString()</td>
+                <td>@expense.Status</td>
+            </tr>
+        }
+    </tbody> *@
+</table>
+
+<h4>Yeni Masraf Girişi</h4>
+<form asp-action="SubmitExpense" method="post">
+    <div class="form-group">
+        <label for="ExpenseType">Masraf Türü</label>
+        <input type="text" class="form-control" id="ExpenseType" name="ExpenseType" />
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Tutar</label>
+        <input type="number" class="form-control" id="Amount" name="Amount" />
+    </div>
+
+    <div class="form-group">
+        <label for="Date">Tarih</label>
+        <input type="date" class="form-control" id="Date" name="Date" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gönder</button>
+</form>

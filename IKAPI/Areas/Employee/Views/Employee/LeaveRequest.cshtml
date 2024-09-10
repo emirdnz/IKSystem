@@ -1,0 +1,49 @@
+﻿
+
+<h2>İzin Yönetimi</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>İzin Türü</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Durum</th>
+        </tr>
+    </thead>
+    <tbody>
+       @*  @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.LeaveType</td>
+                <td>@leave.StartDate.ToShortDateString()</td>
+                <td>@leave.EndDate.ToShortDateString()</td>
+                <td>@leave.Status</td>
+            </tr>
+        } *@
+    </tbody>
+</table>
+
+<h4>Yeni İzin Başvurusu</h4>
+<form asp-action="SubmitLeaveRequest" method="post">
+    <div class="form-group">
+        <label for="LeaveType">İzin Türü</label>
+        <select class="form-control" id="LeaveType" name="LeaveType">
+            <option value="Yıllık İzin">Yıllık İzin</option>
+            <option value="Hastalık İzni">Hastalık İzni</option>
+            <!-- Diğer izin türleri -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="StartDate">Başlangıç Tarihi</label>
+        <input type="date" class="form-control" id="StartDate" name="StartDate" />
+    </div>
+
+    <div class="form-group">
+        <label for="EndDate">Bitiş Tarihi</label>
+        <input type="date" class="form-control" id="EndDate" name="EndDate" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Başvur</button>
+</form>

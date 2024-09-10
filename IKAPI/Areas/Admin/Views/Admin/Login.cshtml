@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url("../../images/73863df5f373a556faf6d71a357a8614.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(8px); /* Arka planı biraz bulanıklaştırarak ön planı vurgular */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Siyah şeffaf bir katman ekleyerek metin ve düğmelerin öne çıkmasını sağlar */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Butonları dikey olarak hizalar */
+            gap: 20px; /* Butonlar arasındaki boşluğu artırır */
+            z-index: 1; /* Butonları üst katmana getirir */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="button-container">
+        <button onclick="window.location.href='@Url.Action("Index", "Admin", new { area = "Admin" })'" class="btn btn-primary mt-3">Panele Git</button>
+
+        <button onclick="window.location.href='@Url.Action("AccountLog", "Admin", new { area = "Admin" })'" class="btn btn-primary mt-3">En Son Ki Kayıtlar </button>
+
+        <button onclick="window.location.href='@Url.Action("Index", "Home" ,new { area = "" })'" class="btn btn-primary mt-3">Log Out</button>
+
+    </div>
+</body>
+</html>

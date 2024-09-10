@@ -1,1 +1,76 @@
 ﻿
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Yönetimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Kullanıcı Yönetimi</h2>
+
+        <!-- Yenile ve Kullanıcı Ekleme Butonları -->
+        <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-secondary" onclick="location.reload()">Yenile</button>
+
+
+            <button onclick="window.location.href='@Url.Action("Create", "Admin" ,new { area = "Admin" })'" class="btn btn-primary mt-3">Add User</button>
+
+        </div>
+
+        <!-- Kullanıcı Listesi -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var user in Model)
+                {
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.Name</td>
+                            <td>@user.SurName</td>
+                            <td>@user.Email</td>
+                            <td>@user.RoleName</td>
+                            <td>
+
+                                <a class="btn btn-warning btn-sm" asp-area="Admin" asp-controller="Admin" asp-action="Edit" href="/Admin/Admin/Edit">
+                                    <i class="fas fa-fw fa-check"></i>
+                                    <span>Duzenle</span>
+                                </a>
+
+                                <a class="btn btn-danger btn-sm" asp-area="Admin" asp-controller="Admin" asp-action="Delete" href="/Admin/Admin/Delete">
+                                    <i class="fas fa-fw fa-check"></i>
+                                    <span>sil</span>
+                                </a>
+
+                            </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Geri Dön Butonu -->
+        <div class="d-flex justify-content-end mt-4">
+            <button class="btn btn-primary" onclick="window.location.href='/Admin/Admin/Index';">
+                Geri Don
+            </button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

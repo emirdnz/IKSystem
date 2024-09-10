@@ -1,1 +1,178 @@
-﻿LOg PAGE
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt ve İzleme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+        .btn-info {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+            .btn-info:hover {
+                background-color: #138496;
+                border-color: #138496;
+            }
+
+        .system-status {
+            margin-top: 30px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-online {
+            background-color: green;
+        }
+
+        .status-offline {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Kayıt ve İzleme</h2>
+
+        <!-- Log Kayıtlarını Filtreleme Seçenekleri -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <label for="logLevel" class="form-label">Log Seviyesi:</label>
+                <select class="form-select" id="logLevel">
+                    <option value="all">Hepsi</option>
+                    <option value="info">Bilgi</option>
+                    <option value="warning">Uyarı</option>
+                    <option value="error">Hata</option>
+                    <option value="critical">Kritik</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="startDate" class="form-label">Başlangıç Tarihi:</label>
+                <input type="date" class="form-control" id="startDate">
+            </div>
+            <div class="col-md-4">
+                <label for="endDate" class="form-label">Bitiş Tarihi:</label>
+                <input type="date" class="form-control" id="endDate">
+            </div>
+        </div>
+        <div class="mb-4">
+            <button class="btn btn-primary w-100" onclick="filterLogs()">Logları Filtrele</button>
+        </div>
+
+        <!-- Log Kayıtları Tablosu -->
+        <div id="logTable" class="mb-5">
+            <h5 class="mb-3">Log Kayıtları</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tarih</th>
+                            <th>Seviye</th>
+                            <th>Mesaj</th>
+                            <th>Kullanıcı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Örnek Log Kayıtları -->
+                        <tr>
+                            <td>1</td>
+                            <td>2024-08-25 14:32:10</td>
+                            <td>Bilgi</td>
+                            <td>Sistem Başlatıldı</td>
+                            <td>Admin</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2024-08-25 15:05:23</td>
+                            <td>Hata</td>
+                            <td>Veritabanı Bağlantı Hatası</td>
+                            <td>Admin</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sistem İzleme Bilgisi -->
+        <div class="system-status">
+            <h5>Canlı Sistem İzleme</h5>
+            <p>
+                <span class="status-indicator status-online"></span>
+                Sistem Durumu: <span id="systemStatus">Çalışıyor</span>
+            </p>
+            <p>Aktif Kullanıcılar: <span id="activeUsers">3</span></p>
+            <p>Sunucu Yükü: <span id="serverLoad">%25</span></p>
+        </div>
+
+        <!-- Geri Dön Butonu -->
+        <div class="d-flex justify-content-end mt-4">
+            <button class="btn btn-info" onclick="goBack()">Geri Dön</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script for Logging and Monitoring -->
+    <script>
+        function filterLogs() {
+            // Logları filtreleme işlemi burada yapılabilir.
+            // Filtreleme kriterlerine göre tabloyu güncelleyin.
+            const logLevel = document.getElementById('logLevel').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+            alert("Loglar filtrelendi:\n" +
+                "Log Seviyesi: " + logLevel + "\n" +
+                "Başlangıç Tarihi: " + startDate + "\n" +
+                "Bitiş Tarihi: " + endDate);
+
+            // Filtreleme işlemi tamamlandıktan sonra tabloyu güncelleyebilirsiniz.
+        }
+
+        function goBack() {
+            // Geri dönme işlemi için yönlendirme
+            window.location.href = '/Admin/Admin/Index';
+        }
+    </script>
+</body>
+
+</html>

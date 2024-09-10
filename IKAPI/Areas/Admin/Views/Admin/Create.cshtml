@@ -1,0 +1,84 @@
+﻿@model IKAPI.Areas.Admin.Models.User
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Kullanıcı Ekle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Yeni Kullanıcı Ekle</h2>
+
+        <!-- Form -->
+        <form asp-controller="Admin" asp-action="Create" method="post">
+            <!-- Name -->
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Ad</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <!-- Surname -->
+            <div class="mb-3">
+                <label asp-for="SurName" class="form-label">Soyad</label>
+                <input asp-for="SurName" class="form-control" />
+                <span asp-validation-for="SurName" class="text-danger"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-3">
+                <label asp-for="PhoneNumber" class="form-label">Telefon Numarası</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Şifre</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <!-- Repassword -->
+            <div class="mb-3">
+                <label asp-for="Repassword" class="form-label">Şifre (Tekrar)</label>
+                <input asp-for="Repassword" type="password" class="form-control" />
+                <span asp-validation-for="Repassword" class="text-danger"></span>
+            </div>
+
+            <!-- Role -->
+            <div class="mb-3">
+                <label asp-for="RoleName" class="form-label">Rol</label>
+                <select asp-for="RoleName" class="form-select">
+                    <option value="Admin">Admin</option>
+                    <option value="HR">HR</option>
+                    <option value="Employee">Employee</option>
+                </select>
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+           
+            <a class="btn btn-secondary" asp-action="Index">İptal</a>
+        </form>
+
+        <div class="text-center">
+            <button onclick="window.location.href='@Url.Action("UserManagement", "Admin" ,new { area = "Admin" })'" class="btn btn-primary mt-3">Geri Dön</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Employee Dashboard</title>
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Employee Panel</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Çalışan İşlemleri
+            </div>
+
+            <!-- Nav Item - Profil Yönetimi -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Employee/Employee/Profile">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Profil Yönetimi</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Görevler -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Employee/Employee/TaskManagement">
+                    <i class="fas fa-fw fa-tasks"></i>
+                    <span>Görev Yönetimi</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - İzin Talepleri -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Employee/Employee/LeaveRequest">
+                    <i class="fas fa-fw fa-calendar-alt"></i>
+                    <span>İzin Talepleri</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Masraf Talepleri -->
+            <li class="nav-item">
+                <a class="nav-link" href="/Employee/Employee/Expenses">
+                    <i class="fas fa-fw fa-dollar-sign"></i>
+                    <span>Masraf Talepleri</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Çıkış Butonu -->
+            <div class="text-center">
+                <button onclick="window.location.href='/Home/Index'" class="btn btn-primary mt-3">Çıkış Yap</button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Employee</span>
+                                <img class="img-profile rounded-circle"
+                                     src="~/images/userlogo.png">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row mb-4">
+                        <!-- Görev Durumu Kartı -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Tamamlanan Görevler
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- İzin Talepleri Kartı -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                İzin Talepleri
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Masraf Talepleri Kartı -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Masraf Talepleri
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="row">
+                        <!-- Horizontal Bar Chart -->
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Görev Durumu</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-bar pt-4 pb-2">
+                                        <canvas id="myBarChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Line Chart -->
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Görev Performansı</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myLineChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Chart.js scripts -->
+    <script>
+        var ctxBar = document.getElementById('myBarChart').getContext('2d');
+        var myBarChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Tamamlanan', 'Devam Eden', 'Bekleyen'],
+                datasets: [{
+                    data: [12, 7, 5],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc']
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Yatay sütun grafik
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctxLine = document.getElementById('myLineChart').getContext('2d');
+        var myLineChart = new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs'],
+                datasets: [{
+                    label: 'Tamamlanan Görevler',
+                    data: [10, 12, 15, 20, 22],
+                    fill: false,
+                    borderColor: '#4e73df'
+                }]
+            }
+        });
+    </script>
+
+</body>
+
+</html>

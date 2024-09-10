@@ -51,6 +51,5 @@ namespace Ik.Bl.Concrete
             throw new NotImplementedException();
         }
     }
-    {
-    }
+    
 }
