@@ -1,0 +1,85 @@
+/* Genel Sayfa Stili */
+body {
+    background-image: url("../../images/73863df5f373a556faf6d71a357a8614.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.8;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Kart ve Ýçerik Stili */
+.card {
+    background-color: rgba(0, 0, 0, 0.7); /* Kartýn arka planýný hafif þeffaf siyah yapar */
+    border: none; /* Kartýn kenarlýklarýný kaldýrýr */
+    border-radius: 10px; /* Kartýn köþelerini yuvarlatýr */
+}
+
+.card-header h3 {
+    color: white; /* Baþlýðýn rengini beyaz yapar */
+}
+
+/* Form Stili */
+.form-group label,
+.form-check-label {
+    color: white; /* Formdaki etiketlerin rengini beyaz yapar */
+    font-size: 1.1em; /* Yazý boyutunu biraz büyütür */
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.3); /* Arka planý biraz daha belirgin hale getirir */
+    color: white; /* Yazý rengini beyaz tutar */
+    border: 2px solid white; /* Kenarlýklarý daha belirgin hale getirir */
+    font-size: 1.1em; /* Yazý boyutunu biraz büyütür */
+}
+
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.7); /* Placeholder yazýlarýn rengini beyaz yapar */
+    }
+
+.form-check-input {
+    width: 20px; /* Kutucuðun boyutunu artýrýr */
+    height: 20px; /* Kutucuðun boyutunu artýrýr */
+    border: 2px solid white; /* Kenarlýklarý daha belirgin hale getirir */
+}
+
+/* Buton Stili */
+.btn-primary {
+    background-color: white; /* Butonun arka plan rengini beyaz yapar */
+    border-color: white; /* Butonun kenarlýðýný beyaz yapar */
+    color: black; /* Buton yazýsýný siyah yapar */
+    font-weight: bold; /* Buton yazýsýný kalýn yapar */
+    padding: 10px 20px; /* Butonun boyutunu artýrýr */
+    border-radius: 5px; /* Buton köþelerini yuvarlatýr */
+}
+
+/* Uyarý Kutusu Stili */
+.alert-box {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Sidebar Stili */
+#accordionSidebar {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.nav-item {
+    margin-bottom: 10px; /* Menü öðeleri arasýna boþluk ekler */
+}
