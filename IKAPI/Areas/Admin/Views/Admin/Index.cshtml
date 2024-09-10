@@ -31,16 +31,9 @@
             <hr class="sidebar-divider my-0">
 
 
-              <!-- Nav Item - Kullanıcı Yönetimi -->
-            <li class="nav-item">
-            <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="UserManagement" href="/Admin/Admin/UserManagement">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Kullanıcı Yönetimi</span>
-            </a>
-            </li>
+          
 
-
-            @*  <!-- Nav Item - Dashboard -->
+             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
             <a class="nav-link" href="#">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -53,9 +46,9 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-            Yönetim
+            
+                Yönetim
             </div>
-
             <!-- Nav Item - Kullanıcı Yönetimi -->
             <li class="nav-item">
             <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="UserManagement" href="/Admin/Admin/UserManagement">
@@ -63,6 +56,7 @@
             <span>Kullanıcı Yönetimi</span>
             </a>
             </li>
+
 
             <!-- Nav Item - Raporlama -->
             <li class="nav-item">
@@ -74,7 +68,7 @@
 
             <!-- Nav Item - Loglama ve İzleme -->
             <li class="nav-item">
-            <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="LoggingAndMonitoring" href="/Admin/Admin/LoggingAndMonitoring">
+            <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="Log" href="/Admin/Admin/Log">
             <i class="fas fa-fw fa-file-alt"></i>
             <span>Loglama ve İzleme</span>
             </a>
@@ -94,7 +88,7 @@
             <!-- Geri Dön Butonu -->
             <div class="text-center">
             <button onclick="window.location.href='@Url.Action("Login", "Admin" ,new { area = "Admin" })'" class="btn btn-primary mt-3">Geri Dön</button>
-            </div> *@
+            </div>
 
            
         </ul>
