@@ -1,4 +1,5 @@
 ﻿using Ik.Bl.Abstract;
+using Ik.Dal.Concrete;
 using Ik.entities.Abstract;
 using System;
 using System.Collections.Generic;
@@ -11,44 +12,52 @@ namespace Ik.Bl.Concrete
 {
     public class ManagerBase<T> : IManagerBase<T> where T : BaseEntity
     {
-        public Task<int> DeleteAsync(T entity)
+        private readonly RepositoryBase<T> repository;
+
+        public ManagerBase()
         {
-            throw new NotImplementedException();
+            this.repository = new RepositoryBase<T>();
         }
 
-        public Task<ICollection<T>> GetAllAsync()
+        public async Task<int> DeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+           return  await repository.DeleteAsync(entity);
+          
         }
 
-        public Task<ICollection<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null)
+        public async Task<ICollection<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await repository.GetAllAsync();
         }
 
-        public Task<IQueryable<T>> GetAllInclude(Expression<Func<T, bool>>? filter = null, params Expression<Func<T, object>>[] include)
+        public async Task<ICollection<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null)
         {
-            throw new NotImplementedException();
+            return await repository.GetAllAsync(filter);
         }
 
-        public Task<T?> GetBy(Expression<Func<T, bool>> filter)
+        public async Task<IQueryable<T>> GetAllInclude(Expression<Func<T, bool>>? filter = null, params Expression<Func<T, object>>[] include)
         {
-            throw new NotImplementedException();
+            return await repository.GetAllInclude(filter, include);
         }
 
-        public Task<T?> GetByIdAsync(int id)
+        public async Task<T?> GetBy(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            return await repository.GetBy(filter);
         }
 
-        public Task<int> InsertAsync(T entity)
+        public async Task<T?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await repository.GetByIdAsync(id);
         }
 
-        public Task<int> UpdateAsync(T entity)
+        public async Task<int> InsertAsync(T entity)
         {
-            throw new NotImplementedException();
+            return await repository.InsertAsync(entity);
+        }
+
+        public async Task<int> UpdateAsync(T entity)
+        {
+            return await repository.UpdateAsync(entity);
         }
     }
     

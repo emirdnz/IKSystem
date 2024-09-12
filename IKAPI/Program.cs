@@ -3,12 +3,14 @@ using Ik.Bl.Concrete;
 using Ik.Dal.Abstract;
 using Ik.Dal.Concrete;
 using Ik.Dal.Context;
+using IKAPI.AutoMapperProfile;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<IKDB>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,9 +27,9 @@ builder.Services.AddScoped<IReportManager, ReportManager>();
 builder.Services.AddScoped<IResumeManager, ResumeManager>();
 builder.Services.AddScoped<IRoleManager, RoleManager>();    
 builder.Services.AddScoped<ISettingsManager, SettingsManager>();
-builder.Services.AddScoped<IUserManager, UserManager>();    
+builder.Services.AddScoped<IUserManager, UserManager>();
 
-
+builder.Services.AddAutoMapper(typeof(IKProfile));
 
 
 

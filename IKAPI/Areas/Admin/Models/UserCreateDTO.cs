@@ -2,7 +2,7 @@
 
 namespace IKAPI.Areas.Admin.Models
 {
-    public class User
+    public class UserCreateDTO
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Ad Alani Zorunludur")]
         public string Name { get; set; }

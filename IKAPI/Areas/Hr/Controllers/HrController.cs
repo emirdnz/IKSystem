@@ -10,5 +10,10 @@ namespace IKAPI.Areas.Hr.Controllers
             return View();
         }
 
+        public IActionResult EmployeeManagement() { return View(); }    
+        public IActionResult TaskManagement() { return View(); }    
+        public IActionResult LeaveRequests() { return View(); }    
+        public IActionResult Reports() { return View(); }    
+
     }
 }

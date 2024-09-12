@@ -34,6 +34,11 @@ namespace Ik.Dal.Concrete
             throw new NotImplementedException();
         }
 
+        public async Task GetAllIncludeAsync<T>(Expression<Func<T, bool>>? filter, Expression<Func<T, object>>[] include) where T : BaseEntity
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<T?> GetBy(Expression<Func<T, bool>> filter)
         {
             throw new NotImplementedException();

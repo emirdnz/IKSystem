@@ -24,7 +24,7 @@ namespace Ik.Dal.Migrations
                     PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     EmailAdress = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IsApproved = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 13, 30, 32, 62, DateTimeKind.Local).AddTicks(9778))
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(7169))
                 },
                 constraints: table =>
                 {
@@ -86,7 +86,7 @@ namespace Ik.Dal.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoleName = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 13, 30, 32, 64, DateTimeKind.Local).AddTicks(439))
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 15, 33, 25, 135, DateTimeKind.Local).AddTicks(623))
                 },
                 constraints: table =>
                 {
@@ -123,7 +123,7 @@ namespace Ik.Dal.Migrations
                     HireDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(1446))
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(8809))
                 },
                 constraints: table =>
                 {
@@ -227,7 +227,7 @@ namespace Ik.Dal.Migrations
                     RoleId = table.Column<int>(type: "int", nullable: false),
                     RoleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 13, 30, 32, 64, DateTimeKind.Local).AddTicks(1940))
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 9, 10, 15, 33, 25, 135, DateTimeKind.Local).AddTicks(2003))
                 },
                 constraints: table =>
                 {
@@ -290,9 +290,9 @@ namespace Ik.Dal.Migrations
                 columns: new[] { "Id", "Address", "CompanyId", "DateOfBirth", "Email", "FirstName", "HireDate", "LastName", "PhoneNumber", "Position" },
                 values: new object[,]
                 {
-                    { 1, null, 1, null, "testhr@gmail.com", "ADMİN", new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(9484), "test", null, "HR" },
-                    { 2, null, 1, null, "testadmin@gmail.com", "HR", new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(9487), "test", null, "Admin" },
-                    { 3, null, 1, null, "testemployee@gmail.com", "EMPLOYEE", new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(9488), "test", null, "Employee" }
+                    { 1, null, 1, null, "testhr@gmail.com", "ADMİN", new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(9690), "test", null, "HR" },
+                    { 2, null, 1, null, "testadmin@gmail.com", "HR", new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(9693), "test", null, "Admin" },
+                    { 3, null, 1, null, "testemployee@gmail.com", "EMPLOYEE", new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(9694), "test", null, "Employee" }
                 });
 
             migrationBuilder.InsertData(

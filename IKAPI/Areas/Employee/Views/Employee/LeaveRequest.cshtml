@@ -1,49 +1,141 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="tr">
 
-<h2>İzin Yönetimi</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İzin Yönetimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>İzin Türü</th>
-            <th>Başlangıç Tarihi</th>
-            <th>Bitiş Tarihi</th>
-            <th>Durum</th>
-        </tr>
-    </thead>
-    <tbody>
-       @*  @foreach (var leave in Model)
-        {
-            <tr>
-                <td>@leave.LeaveType</td>
-                <td>@leave.StartDate.ToShortDateString()</td>
-                <td>@leave.EndDate.ToShortDateString()</td>
-                <td>@leave.Status</td>
-            </tr>
-        } *@
-    </tbody>
-</table>
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
 
-<h4>Yeni İzin Başvurusu</h4>
-<form asp-action="SubmitLeaveRequest" method="post">
-    <div class="form-group">
-        <label for="LeaveType">İzin Türü</label>
-        <select class="form-control" id="LeaveType" name="LeaveType">
-            <option value="Yıllık İzin">Yıllık İzin</option>
-            <option value="Hastalık İzni">Hastalık İzni</option>
-            <!-- Diğer izin türleri -->
-        </select>
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 8px;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            border-radius: 8px;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+                border-color: #545b62;
+            }
+
+        .form-select,
+        .form-control {
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .table-responsive {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center text-primary">İzin Yönetimi</h2>
+
+        <!-- İzin Tablosu -->
+        <div class="table-responsive mb-4">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>İzin Türü</th>
+                        <th>Başlangıç Tarihi</th>
+                        <th>Bitiş Tarihi</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @* @foreach (var leave in Model)
+                    {
+                    <tr>
+                    <td>@leave.LeaveType</td>
+                    <td>@leave.StartDate.ToShortDateString()</td>
+                    <td>@leave.EndDate.ToShortDateString()</td>
+                    <td>@leave.Status</td>
+                    </tr>
+                    } *@
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Yeni İzin Başvurusu -->
+        <h4 class="mb-4">Yeni İzin Başvurusu</h4>
+        <form asp-action="SubmitLeaveRequest" method="post">
+            <div class="form-group">
+                <label for="LeaveType" class="form-label">İzin Türü</label>
+                <select class="form-select" id="LeaveType" name="LeaveType">
+                    <option value="Yıllık İzin">Yıllık İzin</option>
+                    <option value="Hastalık İzni">Hastalık İzni</option>
+                    <!-- Diğer izin türleri -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="StartDate" class="form-label">Başlangıç Tarihi</label>
+                <input type="date" class="form-control" id="StartDate" name="StartDate" />
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate" class="form-label">Bitiş Tarihi</label>
+                <input type="date" class="form-control" id="EndDate" name="EndDate" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Başvur</button>
+        </form>
+
+        <!-- Geri Dön Butonu -->
+        <div class="mt-4">
+            <a href="/Employee/Employee/Index" class="btn btn-secondary">Geri Dön</a>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="StartDate">Başlangıç Tarihi</label>
-        <input type="date" class="form-control" id="StartDate" name="StartDate" />
-    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 
-    <div class="form-group">
-        <label for="EndDate">Bitiş Tarihi</label>
-        <input type="date" class="form-control" id="EndDate" name="EndDate" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Başvur</button>
-</form>
+</html>

@@ -1,28 +1,145 @@
-﻿@* @model PSM.Entities.Concrete.Employee *@
+﻿<!DOCTYPE html>
+<html lang="tr">
 
-<h2>Profil Yönetimi</h2>
-@* 
-<form asp-action="UpdateProfile" method="post">
-    <div class="form-group">
-        <label for="FullName">Ad Soyad</label>
-        <input type="text" class="form-control" id="FullName" name="FullName" value="@Model.FirstName" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Görüntüleme ve Düzenleme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .form-select,
+        .form-control {
+            border-radius: 8px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+                border-color: #545b62;
+            }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Profil Görüntüleme ve Düzenleme</h2>
+
+        <!-- Profil Görüntüleme -->
+        <div class="mb-4">
+            <h4>Profil Bilgileri</h4>
+            <div class="form-group">
+                <label for="Name" class="form-label">Adı Soyadı</label>
+                <input type="text" class="form-control" id="Name" name="Name" value="Ali Yılmaz" readonly />
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="Email" class="form-label">E-posta</label>
+                <input type="email" class="form-control" id="Email" name="Email" value="ali.yilmaz@example.com" readonly />
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="Phone" class="form-label">Telefon</label>
+                <input type="tel" class="form-control" id="Phone" name="Phone" value="+90 123 456 7890" readonly />
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="Position" class="form-label">Pozisyon</label>
+                <input type="text" class="form-control" id="Position" name="Position" value="Yazılım Geliştirici" readonly />
+            </div>
+        </div>
+
+        <!-- Profil Düzenleme Butonu -->
+        <div class="mt-4 text-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Profil Düzenle</button>
+        </div>
+
+        <!-- Profil Düzenleme Modal -->
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">Profil Düzenle</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-action="UpdateProfile" method="post">
+                            <div class="form-group mb-3">
+                                <label for="EditName" class="form-label">Adı Soyadı</label>
+                                <input type="text" class="form-control" id="EditName" name="Name" value="Ali Yılmaz" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="EditEmail" class="form-label">E-posta</label>
+                                <input type="email" class="form-control" id="EditEmail" name="Email" value="ali.yilmaz@example.com" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="EditPhone" class="form-label">Telefon</label>
+                                <input type="tel" class="form-control" id="EditPhone" name="Phone" value="+90 123 456 7890" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="EditPosition" class="form-label">Pozisyon</label>
+                                <input type="text" class="form-control" id="EditPosition" name="Position" value="Yazılım Geliştirici" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Geri Dön butonu -->
+        <div class="mt-4">
+            <a href="/Employee/Employee/Index" class="btn btn-secondary">Geri Dön</a>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="Email">E-posta</label>
-        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" />
-    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 
-    <div class="form-group">
-        <label for="PhoneNumber">Telefon Numarası</label>
-        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" />
-    </div>
-
-    <div class="form-group">
-        <label for="Position">Pozisyon</label>
-        <input type="text" class="form-control" id="Position" name="Position" value="@Model.Position" disabled />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Profili Güncelle</button>
-</form>
- *@
+</html>

@@ -47,7 +47,6 @@ namespace Ik.Dal.Context
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-
-
     }
+
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ik.Dal.Migrations
 {
     [DbContext(typeof(IKDB))]
-    [Migration("20240910103032_IK")]
+    [Migration("20240910123325_IK")]
     partial class IK
     {
         /// <inheritdoc />
@@ -46,7 +46,7 @@ namespace Ik.Dal.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 10, 13, 30, 32, 62, DateTimeKind.Local).AddTicks(9778));
+                        .HasDefaultValue(new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(7169));
 
                     b.Property<string>("EmailAdress")
                         .IsRequired()
@@ -97,7 +97,7 @@ namespace Ik.Dal.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(1446));
+                        .HasDefaultValue(new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(8809));
 
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
@@ -145,7 +145,7 @@ namespace Ik.Dal.Migrations
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "testhr@gmail.com",
                             FirstName = "ADMİN",
-                            HireDate = new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(9484),
+                            HireDate = new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(9690),
                             LastName = "test",
                             Position = "HR"
                         },
@@ -156,7 +156,7 @@ namespace Ik.Dal.Migrations
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "testadmin@gmail.com",
                             FirstName = "HR",
-                            HireDate = new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(9487),
+                            HireDate = new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(9693),
                             LastName = "test",
                             Position = "Admin"
                         },
@@ -167,7 +167,7 @@ namespace Ik.Dal.Migrations
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "testemployee@gmail.com",
                             FirstName = "EMPLOYEE",
-                            HireDate = new DateTime(2024, 9, 10, 13, 30, 32, 63, DateTimeKind.Local).AddTicks(9488),
+                            HireDate = new DateTime(2024, 9, 10, 15, 33, 25, 134, DateTimeKind.Local).AddTicks(9694),
                             LastName = "test",
                             Position = "Employee"
                         });
@@ -381,7 +381,7 @@ namespace Ik.Dal.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 10, 13, 30, 32, 64, DateTimeKind.Local).AddTicks(439));
+                        .HasDefaultValue(new DateTime(2024, 9, 10, 15, 33, 25, 135, DateTimeKind.Local).AddTicks(623));
 
                     b.Property<string>("RoleName")
                         .IsRequired()
@@ -457,7 +457,7 @@ namespace Ik.Dal.Migrations
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 9, 10, 13, 30, 32, 64, DateTimeKind.Local).AddTicks(1940));
+                        .HasDefaultValue(new DateTime(2024, 9, 10, 15, 33, 25, 135, DateTimeKind.Local).AddTicks(2003));
 
                     b.Property<string>("Email")
                         .IsRequired()

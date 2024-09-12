@@ -1,4 +1,4 @@
-﻿@model IKAPI.Areas.Admin.Models.User
+﻿@model IKAPI.Areas.Admin.Models.UserCreateDTO
 
 <!DOCTYPE html>
 <html lang="tr">
@@ -35,12 +35,7 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
-            <!-- Phone Number -->
-            <div class="mb-3">
-                <label asp-for="PhoneNumber" class="form-label">Telefon Numarası</label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
+         
 
             <!-- Password -->
             <div class="mb-3">
@@ -49,13 +44,7 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <!-- Repassword -->
-            <div class="mb-3">
-                <label asp-for="Repassword" class="form-label">Şifre (Tekrar)</label>
-                <input asp-for="Repassword" type="password" class="form-control" />
-                <span asp-validation-for="Repassword" class="text-danger"></span>
-            </div>
-
+            
             <!-- Role -->
             <div class="mb-3">
                 <label asp-for="RoleName" class="form-label">Rol</label>
@@ -68,7 +57,6 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Kaydet</button>
-           
             <a class="btn btn-secondary" asp-action="Index">İptal</a>
         </form>
 
