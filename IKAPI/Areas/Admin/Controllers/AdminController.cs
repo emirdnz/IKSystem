@@ -39,7 +39,8 @@ namespace IKAPI.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create() 
         { 
-            return View(); 
+            UserCreateDTO dto = new();
+            return View(dto); 
         }
 
         [HttpPost]
